@@ -1,7 +1,7 @@
 Name:             HDBC-mysql
 Category:         Database
 Synopsis:         MySQL driver for HDBC
-Version:          0.6.6.2
+Version:          0.6.7.0
 Stability:        Experimental
 Maintainer:       Bryan O'Sullivan <bos@serpentine.com>
 Author:           Chris Waterson
@@ -23,15 +23,15 @@ extra-source-files:
 library
   Exposed-modules:  Database.HDBC.MySQL
   Other-modules:
-    Database.HDBC.MySQL.Connection
-    Database.HDBC.MySQL.RTS
+        Database.HDBC.MySQL.Connection
+        Database.HDBC.MySQL.RTS
   Build-Depends:
-    HDBC >= 2.1.0,
-    base >= 2 && < 5,
-    bytestring,
-    time,
-    utf8-string
-  ghc-options:      -Wall
+        base
+      , HDBC
+      , bytestring
+      , time
+      , utf8-string
+  ghc-options:     -Wall
   Extra-Libraries: mysqlclient
 
 source-repository head
