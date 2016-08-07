@@ -5,10 +5,10 @@ This is a "native" HDBC driver for MySQL that makes use of
 libmysqlclient to communicate with a MySQL server.  By way of
 synopsis:
 
-  import Control.Monad
-  import Database.HDBC
-  import Database.HDBC.MySQL
-  main = do conn <- connectMySQL defaultMySQLConnectInfo {
+    import Control.Monad
+    import Database.HDBC
+    import Database.HDBC.MySQL
+    main = do conn <- connectMySQL defaultMySQLConnectInfo {
                          mysqlHost     = "db1.example.com",
                          mysqlUser     = "scott",
                          mysqlPassword = "tiger"
@@ -77,14 +77,14 @@ Testing
 There's a little test program that runs a query and spews out the
 results.  To compile it,
 
-  ghc -idist/build -L/opt/local/lib/mysql5/mysql -lmysqlclient --make Test
+    ghc -idist/build -L/opt/local/lib/mysql5/mysql -lmysqlclient --make Test
 
 I'm still trying to get the Makefile right so that it can build the
 test sources: it's not there yet.  Here's how I've been doing it, for
 now:
 
-  cd testsrc
-  ghc --make -package HUnit -package HDBC -Wall -i../dist/build -i.. -L/opt/local/lib/mysql5/mysql -lmysqlclient -o runtests runtests.hs
+    cd testsrc
+    ghc --make -package HUnit -package HDBC -Wall -i../dist/build -i.. -L/opt/local/lib/mysql5/mysql -lmysqlclient -o runtests runtests.hs
 
 One issue is that I want the location of the MySQL library to come
 from the configuration data, rather than be hard-coded.
